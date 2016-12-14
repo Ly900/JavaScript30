@@ -64,9 +64,10 @@
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
 
     // If the pressed audio key is not found in the document, nothing will happen.
-    if(!audio) {
-      return;
-    }
+    if(!audio) return;
+
+    // Rewinds to the start of audio sound.
+    audio.currentTime = 0;
 
     audio.play();
 
